@@ -4,7 +4,7 @@
   "homepage": "https://ShamHawk.github.io/NotesApp/",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",~
+    "build": "vue-cli-service build",
     "predeploy": "vue-cli-service build",
     "deploy": "gh-pages -d dist"
   },
