@@ -1,5 +1,3 @@
 module.exports = {
-  publicPath: "/",
-  productionSourceMap: false,
-  assetsDir: "assets",
-};
+  publicPath: process.env.NODE_ENV === 'production' ? '/NotesApp/' : '/'
+}
