@@ -62,17 +62,15 @@ export default {
 }
 @media only screen and (max-width: 768px) {
   .tags-list {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
   }
-
   .tag-item {
-    margin-bottom: 10px;
+    margin-bottom: 10px !important;
   }
 }
-
 @media only screen and (max-width: 480px) {
   .tag-item {
-    padding: 6px 18px;
+    padding: 6px 18px !important;
   }
 }
 </style>
