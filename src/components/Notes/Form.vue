@@ -32,7 +32,6 @@ export default {
     onSubmit() {
       const { value, activeTag } = this
       this.$emit('onSubmit', value, activeTag)
-      console.log(value, activeTag)
       this.value = ''
       this.activeTag = null
     },
