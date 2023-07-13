@@ -60,4 +60,19 @@ export default {
     margin-right: 0;
   }
 }
+@media only screen and (max-width: 768px) {
+  .tags-list {
+    flex-wrap: wrap;
+  }
+
+  .tag-item {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .tag-item {
+    padding: 6px 18px;
+  }
+}
 </style>
