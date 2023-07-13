@@ -13,6 +13,9 @@ export const store = createStore({
     },
     removeNote(state, index) {
       state.notes.splice(index, 1)
+    },
+    updateNote(state, { index, note }) {
+      state.notes[index] = note
     }
   },
   actions: {
@@ -22,6 +25,10 @@ export const store = createStore({
         const notes = JSON.parse(localNotes)
         commit('setNotes', notes)
       }
+    },
+    updateNote({ commit, state }, { index, note }) {
+      commit('updateNote', { index, note })
+      localStorage.setItem('notes', JSON.stringify(state.notes))
     },
     addNote({ commit }, { value, activeTag }) {
       const note = {

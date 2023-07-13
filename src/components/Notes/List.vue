@@ -22,7 +22,7 @@
             <img src="@/assets/icons/save.png" alt="save" />
           </button>
         </div>
-        <p style="cursor: pointer;" @click="$emit('onRemove', index)">
+        <p style="cursor: pointer" @click="$emit('onRemove', index)">
           &#10005;
         </p>
       </div>
@@ -39,6 +39,7 @@
 
 <script>
 import TagsList from '@/components/UI/TagsList.vue'
+import { mapActions } from 'vuex'
 export default {
   components: { TagsList },
   props: {
@@ -48,11 +49,14 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['updateNote']),
     toggleEditing(index) {
       this.items[index].isEditing = !this.items[index].isEditing
+      this.updateNote({ index, note: this.items[index] })
     },
     saveChanges(index) {
-      this.toggleEditing(index)
+      this.items[index].isEditing = !this.items[index].isEditing
+      this.updateNote({ index, note: this.items[index] })
     }
   }
 }
